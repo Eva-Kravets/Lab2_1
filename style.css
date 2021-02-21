@@ -1,0 +1,309 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: normal 16px;
+    font-family:Georgia;
+    padding: 0 10%;
+    background: #eee;
+}
+
+.container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+/*Header*/
+
+header {
+    display: flex;  /*Элемент ведёт себя как блочный и выкладывает содержимое согласно флекс-модели.*/
+
+    justify-content: space-between;/*Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера.
+        Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера.*/
+
+    align-items: center;/*Выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении.
+          Флексы выравниваются по линии поперечной оси.*/
+
+    padding: 40px 100px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.90);
+}
+
+.header-left {
+     color: rgb(125, 204, 225);
+}
+
+.header-center ul li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+        .header-center ul li a {
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+            .header-center ul li a:hover {
+                color: rgb(125, 204, 225);
+            }
+
+.header-right button {
+    color: rgb(125, 204, 225);
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border: 2px solid rgb(163, 231, 249);
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+    .header-right button:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+/*Main*/
+.main-content {
+    padding: 60px 100px;
+    background-color: #fff;
+    line-height: 1.5;
+    color: #444;
+}
+
+    .main-content h2 {
+        margin-bottom: 38px;
+    }
+
+    .main-content p {
+        margin: 30px 0;
+    }
+
+/*Контейнер 1*/
+.flex-container1 {
+    display: flex; 
+    height: 300px; 
+    flex-flow: column wrap; /* Расположение в виде колонок */
+   
+}
+
+.flex-item {
+    display: flex; 
+    align-items: center; /* Выравнивание текста по вертикали */
+    justify-content: center; /* Выравнивание текста по горизонтали */
+}
+
+.one {
+    background: rgba(80, 134, 148, 0.41);
+    margin-right: 10px;
+    flex-basis: 100%; /*Оределяет основу флекса, которая является начальным размером элемента*/
+    order: 1; /* Первый блок */
+}
+
+.two {
+    background: rgba(187, 132, 76, 0.30);
+    margin-bottom: 10px;
+    flex: 1 1 0; /*Три значения: flex-grow | flex-shrink | flex-basis*/
+    order: 2; /* Второй блок */
+}
+
+.three {
+    background: rgba(146, 157, 121, 0.35); 
+    flex: 1 1 0;
+    order: 3; /* Третий блок */
+}
+
+/*Контейнер 2*/
+.flex-container2 {
+    padding: 10px;
+    background-color: #e3e3e3;
+    display: flex;
+    flex-wrap: wrap; /*Флексы выстраиваются в несколько строк, их направление задаётся свойством flex-direction.*/
+    flex-direction: row; /*Главная ось направлена так же, как и ориентация текста, по умолчанию слева направо.*/
+
+    justify-content: space-around; /*Флексы равномерно распределяются по всей строке. 
+        Пустое пространство перед первым и после последнего элементов равно половине пространства между двумя соседними элементами.*/
+
+    align-content: flex-end; /*Отображает гибкие линии в конце контейнера:*/
+    border-radius: 15px;
+}
+
+img {
+    margin: 10px;
+    flex: 1; /*Одно значение, число без единиц flex-grow*/
+    width: 150px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+/*Контейнер 3*/
+.flex-container3 {
+    display: flex;
+    height: 200px;
+   
+}
+
+    .flex-container3 div {
+        background-color: rgba(146, 157, 121, 0.35);
+        color: black;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+    }
+
+/*Контейнер 4*/
+.flex-container4 {
+    display: flex;
+    align-items: stretch; /*Флексы растягиваются таким образом, чтобы занять всё доступное пространство контейнера.*/
+}
+
+    .flex-container4 div {
+        background-color: rgba(187, 132, 76, 0.30);
+        color: black;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+    }
+
+/*Контейнер 5*/
+.flex-container5 {
+    display: flex;
+    align-items: stretch; /*Флексы растягиваются таким образом, чтобы занять всё доступное пространство контейнера.*/
+}
+
+    .flex-container5 div {
+        background-color: rgba(80, 134, 148, 0.41);
+        color: black;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+    }
+
+/*Контейнер с формой*/
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.90);
+    list-style-type: none;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end; /*Флексы прижаты к концу строки.*/
+    padding: .5em;
+}
+
+    .form-row label {
+        padding: .5em 1em .5em .5em;
+        flex: 1; /*Одно значение, число без единиц flex-grow*/
+        background-color: rgb(80, 134, 148);
+        color: #fff;
+    }
+
+    .form-row input {
+        flex: 2;
+        border: 3px solid rgb(80, 134, 148);
+    }
+
+    .form-row  input,
+    .form-row  button {
+        padding: .5em;
+    }
+
+    .form-row button {
+        color: rgb(80, 134, 148);
+        cursor: pointer;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 12px 30px;
+        border: 2px solid rgb(80, 134, 148);
+        border-radius: 5px;
+    }
+        .form-row button:hover {
+            background-color: rgb(80, 134, 148);
+            color: #fff;
+        }
+
+/*Footer*/
+footer {
+    padding: 40px;
+    padding-left: 60px;
+    background: rgba(0, 0, 0, 0.90);
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Медиа-запросы*/
+
+@media screen and (min-width: 768px) {
+    .form-row input {
+        flex: 3; /*Одно значение, число без единиц flex-grow*/
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .form-row  input {
+        flex: 4;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .form-row  input {
+        flex: 5;
+    }
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 40px 60px;
+    }
+
+    .main-content {
+        padding: 100px 60px;
+    }
+
+    body {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column; /*Главная ось располагается вертикально и направлена сверху вниз.*/
+        align-items: flex-start; /*Флексы выравниваются в начале поперечной оси контейнера.*/
+    }
+
+        header > div {
+            margin: 12px 0;
+        }
+
+    .header-center ul li {
+        margin: 0 15px 0 0;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .header-left {
+        margin-top: 0;
+    }
+
+    header {
+        padding: 30px;
+    }
+
+    .main-content {
+        padding: 30px;
+    }
+}
